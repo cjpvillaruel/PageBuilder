@@ -15,7 +15,8 @@ const zoomStyle = {
 }
 
 const PageBuilder = () => {
-  const [zoom, setZoom] = useState(100);
+  const [zoom, setZoom] = useState(150);
+  const [pageComponents, setComponents] = useState([]);
 
   const zoomIn = () => {
     if( zoom + 25 <= 250){
@@ -29,9 +30,18 @@ const PageBuilder = () => {
     }
   };
 
+  const addComponent = (newComponent) => {
+    console.log(newComponent);
+    // change focused component
+
+    const newComponents = pageComponents.map( component => ({...component, isEditMode: false}));
+    
+    setComponents([...newComponents, { type: newComponent, isEditMode: true}])
+  }
+
   return(
     <Row style={{ background: 'white'}}>
-      <Col span={6}><Toolbar /></Col>
+      <Col span={6}><Toolbar addComponent={addComponent}/></Col>
       <Col
         span={12}
         style={{
@@ -43,7 +53,7 @@ const PageBuilder = () => {
           overflow: 'scroll'
         }}
       >
-          <PageEditor zoom={zoom} />
+          <PageEditor zoom={zoom} pageComponents={pageComponents} />
           <div style={{
             position: 'fixed',
             marginTop: -25,

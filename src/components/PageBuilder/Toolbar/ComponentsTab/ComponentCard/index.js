@@ -16,12 +16,13 @@ const cardStyle = {
   borderRadius: 5,
   height: 100,
   border: '1px solid #aaaaca',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  background: 'white'
 }
 
-const ComponentCard = ({ title, icon, children }) => {
+const ComponentCard = ({ title, icon, type, onClick }) => {
   return (
-    <button style={cardStyle}>
+    <button style={cardStyle} onClick={e => onClick(type)}>
       <Icon type={icon} style={{ fontSize: '2rem', display: 'block' }} />
       {title}
     </button>

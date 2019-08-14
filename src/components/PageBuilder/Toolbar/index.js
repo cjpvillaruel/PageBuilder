@@ -5,12 +5,12 @@ import PageListTab from './PageListTab';
 
 const { TabPane } = Tabs;
 
-const Toolbar = () => {
+const Toolbar = ({ addComponent }) => {
 
   return (
-    <Tabs >
+    <Tabs>
       <TabPane tab="Insert" key="components-tab">
-        <ComponentsTab />
+        <ComponentsTab addComponent={addComponent}/>
       </TabPane>
       <TabPane tab="Pages" key="pages-tab">
         <PageListTab />
