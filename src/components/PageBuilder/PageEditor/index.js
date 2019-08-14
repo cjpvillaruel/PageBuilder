@@ -3,6 +3,7 @@ import Heading from './components/Heading/Heading';
 import Text from './components/Text';
 import {default as Table} from './components/Table';
 import Tab from './components/Tab';
+import HeroCarousel from './components/Carousel';
 
 const size = [250, 440]
 
@@ -12,7 +13,8 @@ const components = {
   heading: Heading,
   text: Text,
   table: Table,
-  tabs: Tab
+  tabs: Tab,
+  carousel: HeroCarousel,
 }
 
 const PageEditor = ({ zoom, pageComponents }) => {

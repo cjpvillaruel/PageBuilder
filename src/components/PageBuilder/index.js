@@ -50,7 +50,8 @@ const PageBuilder = () => {
           padding: 50,
           background: '#bfbfbf',
           height: 540,
-          overflow: 'scroll'
+          overflow: 'scroll',
+          position: 'relative'
         }}
       >
           <PageEditor zoom={zoom} pageComponents={pageComponents} />

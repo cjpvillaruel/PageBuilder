@@ -10,6 +10,7 @@ const Tab = ({text, isEditMode, value}) => {
   return (
     <Tabs defaultActiveKey="1">
       <TabPane tab="Tab 1" key="1">
+        {/* add component button for each tab */}
        <Editor />
       </TabPane>
       <TabPane tab="Tab 2" key="2">
@@ -29,7 +30,6 @@ const Editor = () => (
       data=""
       onInit={ editor => {
           // You can store the "editor" and use when it is needed.
-          editor.editing.view.focus();
       } }
       onChange={ ( event, editor ) => {
           const data = editor.getData();
