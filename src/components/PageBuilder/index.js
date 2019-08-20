@@ -48,7 +48,7 @@ const PageBuilder = () => {
           display: 'flex',
           justifyContent: 'center',
           padding: 50,
-          background: '#bfbfbf',
+          background: '#efefef',
           height: 540,
           overflow: 'scroll',
           position: 'relative'
